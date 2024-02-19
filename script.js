@@ -1,5 +1,5 @@
 const apiKey = "60f31ce8e9faab53b9d1d9f68e6cd865";
-    const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
     const searchBox = document.querySelector(".search input");
     const searchBtn = document.querySelector(".search button");
@@ -15,12 +15,13 @@ const apiKey = "60f31ce8e9faab53b9d1d9f68e6cd865";
         else{
 
             var data = await response.json();
+            console.log(data);
 
         document.querySelector(".city").innerHTML = data.name;
         document.querySelector(".temp").innerHTML =Math.round(data.main.temp) + "°c";
         document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
         document.querySelector(".wind").innerHTML = data.wind.speed + " kmph"; 
-        
+        document.querySelector(".desc").innerHTML = data.weather[0].main; 
         
         if(data.weather[0].main=="Clouds"){
             weather_icon.src = "images/clouds.png";
@@ -44,4 +45,4 @@ const apiKey = "60f31ce8e9faab53b9d1d9f68e6cd865";
     } 
     searchBtn.addEventListener("click", ()=>{
         checkWeather(searchBox.value);
-    })  
+    });

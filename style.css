@@ -5,20 +5,21 @@
     box-sizing: border-box;
 }
 body{
-    background: #222;
+    background: #bdf2e2;
 }
 .card{
     width: 90%;
     max-width: 500px;
     background: linear-gradient(135deg, #00feba, #5b548a);
     color: #fff;
-    margin: 100px auto 0;
+    margin: 60px auto 0;
     border-radius: 20px;
     padding: 40px 35px;
     text-align: center;
 }
 .search{
     width: 100%;
+    flex-wrap: wrap;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -59,6 +60,10 @@ body{
     font-size: 45px;
     font-weight: 400;
     margin-top: 10px;
+}
+.weather h3{
+    font-weight: 300;
+    margin-top: 5px;
 }
 .details{
     display: flex;
